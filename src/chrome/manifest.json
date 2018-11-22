@@ -1,6 +1,6 @@
 {
     "name": "Outlook email ad remover",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Removes the ad section of Microsoft's Outlook web mail client",
     "manifest_version": 2,
     "icons": {
