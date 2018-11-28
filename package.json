@@ -1,0 +1,28 @@
+{
+  "name": "outlook-email-ad-remover",
+  "version": "1.0.2",
+  "description": "Removes the ad section of Microsoft's Outlook web mail client",
+  "main": "index.js",
+  "scripts": {
+    "build": "npm run build:clean && npm run build:chrome && npm run build:firefox",
+    "build:clean": "mkdir -p dist && rm -rf dist/",
+    "build:chrome": "chmod +x ./build-for-chrome.sh && ./build-for-chrome.sh",
+    "build:firefox": "chmod +x ./build-for-firefox.sh && ./build-for-firefox.sh",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hdong92/outlook-email-ad-remover.git"
+  },
+  "keywords": [
+    "outlook",
+    "ad",
+    "remove"
+  ],
+  "author": "Hao Dong",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hdong92/outlook-email-ad-remover/issues"
+  },
+  "homepage": "https://github.com/hdong92/outlook-email-ad-remover#readme"
+}

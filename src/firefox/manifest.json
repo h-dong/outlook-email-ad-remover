@@ -4,13 +4,8 @@
   "description": "Removes the ad section of Microsoft's Outlook web mail client",
   "manifest_version": 2,
   "icons": {
-    "16": "icons/16x16.png",
-    "32": "icons/32x32.png",
     "48": "icons/48x48.png",
-    "128": "icons/128x128.png"
-  },
-  "browser_action": {
-    "default_icon": "icons/128x128.png"
+    "96": "icons/96x96.png"
   },
   "content_scripts": [
     {
