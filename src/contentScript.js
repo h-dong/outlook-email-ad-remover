@@ -12,16 +12,8 @@ function findAndRemoveAdElement() {
   } else {
     // desktop
     var findAdElemTopDown = document.querySelector('#app > div > div:nth-child(2) > div > div > div:nth-child(4)');
-    var refElement = document.getElementById('PopoutContainerTarget');
-    var findAdElemBottomUp;
 
-    if (refElement && refElement.parentNode && refElement.parentNode.children[0] && refElement.parentNode.children[0].children[0]) {
-      findAdElemBottomUp = refElement.parentNode.children[0].children[0].children[3];
-    }
-
-    if (findAdElemTopDown === findAdElemBottomUp) {
-      if (findAdElemTopDown) findAdElemTopDown.parentNode.removeChild(findAdElemTopDown);
-    }
+    if (findAdElemTopDown) findAdElemTopDown.parentNode.removeChild(findAdElemTopDown);
   }
 }
 
