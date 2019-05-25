@@ -11,9 +11,10 @@ function findAndRemoveAdElement() {
     }
   } else {
     // desktop
-    var findAdElemTopDown = document.querySelector('#app > div > div:nth-child(2) > div > div > div:nth-child(4)');
+    var navigationPanel = document.querySelector('[aria-label="Navigation pane"]');
+    var adPanel = navigationPanel.parentNode.lastChild;
 
-    if (findAdElemTopDown) findAdElemTopDown.parentNode.removeChild(findAdElemTopDown);
+    if (adPanel) adPanel.parentNode.removeChild(adPanel);
   }
 }
 

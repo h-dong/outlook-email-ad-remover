@@ -1,6 +1,6 @@
 {
   "name": "outlook-email-ad-remover",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Removes the ad section of Microsoft's Outlook web mail client",
   "main": "index.js",
   "scripts": {
