@@ -7,14 +7,31 @@ function findAndRemoveAdElement() {
     var findAdElemWithAutoSelector = document.querySelector('._lv_u > div:nth-child(2)');
     
     if (findAdElemWithCustomSelector === findAdElemWithAutoSelector) {
-      if (findAdElemWithCustomSelector) findAdElemWithCustomSelector.parentNode.removeChild(findAdElemWithCustomSelector);
+      if (findAdElemWithCustomSelector) findAdElemWithCustomSelector.style.display = "none";
     }
   } else {
     // desktop
     var navigationPanel = document.querySelector('[aria-label="Navigation pane"]');
-    var adPanel = navigationPanel.parentNode.lastChild;
 
-    if (adPanel) adPanel.parentNode.removeChild(adPanel);
+    if (window.innerWidth > 989) {
+      // large screens
+      var wrapperNode = navigationPanel.parentNode;
+
+      if (wrapperNode.childElementCount === 4) {
+        var adPanel = wrapperNode.lastChild;
+    
+        if (adPanel) adPanel.style.display = "none";
+      }
+    } else {
+      // small screens
+      var wrapperNode = navigationPanel.parentNode.parentNode;
+
+      if (wrapperNode.childElementCount === 2) {
+        var adPanel = wrapperNode.lastChild;
+    
+        if (adPanel) adPanel.style.display = "none";
+      }
+    }
   }
 }
 
