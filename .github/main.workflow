@@ -1,6 +1,6 @@
 workflow "Test Build" {
-  on = "pull_request"
-  resolves = ["NPM build"]
+  on = "push"
+  resolves = ["Run build"]
 }
 
 action "NPM install" {
@@ -8,8 +8,13 @@ action "NPM install" {
   runs = "npm i"
 }
 
-action "NPM build" {
-  uses = "actions/npm@59b64a598378f31e49cb76f27d6f3312b582f680"
-  needs = ["NPM install"]
+action "Install dependencies" {
+  uses = "actions/setup-node@3d792c1dbd495fc03ea5f33f13f53cf2f774d317"
+  runs = "npm i"
+}
+
+action "Run build" {
+  uses = "actions/setup-node@3d792c1dbd495fc03ea5f33f13f53cf2f774d317"
+  needs = ["Install dependencies"]
   runs = "npm run build"
 }
